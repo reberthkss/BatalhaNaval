@@ -1,8 +1,8 @@
 VERIFICAR PORQUE ESTA APARECENDO JOGADOR 01 DEPOIS QUE POSICIONA AS PECAS --OK
-Não consigo posicionar pA em [9][6];
+Não consigo posicionar pA em [9][6]; --OK
 Verificao da destruição das pecas está errada -- OK;
 Criar função para receber jogadas; --OK
 Alterar lógica para verificar pecas destruidas -- OK;
 Aplicar stylesheet;
-Travas;
+Travas; -- OK
 Mostrar mensagens; -- ok

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1571361524 source:c:\users\rodrigo\desktop\batalhan\main.c
+1571499556 source:c:\users\rodrigo\desktop\batalhan\main.c
 	<stdio.h>
 	<stdlib.h>
 	"fPosicionar.h"
@@ -17,7 +17,7 @@
 	"fPosicionar.h"
 	"fJogar.h"
 
-1571353505 c:\users\rodrigo\desktop\batalhan\fposicionar.h
+1571496419 c:\users\rodrigo\desktop\batalhan\fposicionar.h
 
 1571353564 source:c:\users\rodrigo\desktop\batalhan\fposicionar.cpp
 	"fPosicionar.h"
@@ -25,12 +25,12 @@
 	<stdlib.h>
 	<iostream>
 
-1571354094 source:c:\users\rodrigo\desktop\batalhan\fposicionar.c
+1571500245 source:c:\users\rodrigo\desktop\batalhan\fposicionar.c
 	"fPosicionar.h"
 	<stdio.h>
 	<stdlib.h>
 
-1571353490 c:\users\rodrigo\desktop\batalhan\fjogar.h
+1571496733 c:\users\rodrigo\desktop\batalhan\fjogar.h
 
 1571353529 source:c:\users\rodrigo\desktop\batalhan\fjogar.cpp
 	"fJogar.h"
@@ -38,7 +38,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1571361478 source:c:\users\rodrigo\desktop\batalhan\fjogar.c
+1571496824 source:c:\users\rodrigo\desktop\batalhan\fjogar.c
 	"fJogar.h"
 	"fPosicionar.h"
 	<stdio.h>

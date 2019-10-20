@@ -150,6 +150,14 @@ int jogada(int linecol[],int opt)
     return linecol[2];
 }
 
+int jogadaR(int linecol[])
+{
+    linecol[0] = rand()%9;
+    linecol[1] = rand()%9;
+
+    return linecol[2];
+}
+
 void game(int linecol[],int mat[10][10],int* pA,int* cpA,int* nT,int* cnT,int* cT,int* ccT,int* sM,int* csM)
 {
 
@@ -251,6 +259,115 @@ void game(int linecol[],int mat[10][10],int* pA,int* cpA,int* nT,int* cnT,int* c
         mat[linecol[0]][linecol[1]] = -1;
 
         printf("VOCE DETRUIU UM SUBMARINO!!");
+
+        (*sM)--;
+        getch();
+        break;
+    }
+}
+
+
+void gameR(int linecol[],int mat[10][10],int* pA,int* cpA,int* nT,int* cnT,int* cT,int* ccT,int* sM,int* csM)
+{
+
+    switch(mat[linecol[0]][linecol[1]])
+    {
+    case -1:
+        printf("A MAQUINA JA ATACOU ESTA POSICAO!! NAO HA NADA AQUI\n!!");
+        getch();
+        break;
+    case 0:
+        printf("A MAQUINA NAO ACERTOU NENHUMA EMBARCACAO!!!\n");
+        mat[linecol[0]][linecol[1]] = -2;
+
+        getch();
+
+        break;
+    case 1:
+        printf("A MAQUINA ACERTOU UMA EMBARCACAO!!!\n");
+
+        mat[linecol[0]][linecol[1]] = -1;
+        (*cpA)++;
+        getch();
+
+
+        if((*cpA) == 4)
+        {
+
+            if(((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]][linecol[1]-1] == -1) && (mat[linecol[0]][linecol[1]-2] == -1) && (mat[linecol[0]][linecol[1]-3] == -1)) || ((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]][linecol[1]+1] == -1) && (mat[linecol[0]][linecol[1]+2] == -1) && (mat[linecol[0]][linecol[1]+3] == -1)))
+            {
+                printf("A MAQUINA DETRUIU UM PORTA AVIOES!!");
+                (*pA)--;
+                getch();
+            }
+            else
+            {
+                if(((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]-1][linecol[1]] == -1) && (mat[linecol[0]-2][linecol[1]] == -1) && (mat[linecol[0]-3][linecol[1]] == -1)) || ((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]+1][linecol[1]] == -1) && (mat[linecol[0]+2][linecol[1]] == -1) && (mat[linecol[0]+3][linecol[1]] == -1)))
+                {
+                    printf("A MAQUINA DESTRIU UM PORTA-AVIOES!!");
+                    (*pA)--;
+                    getch();
+                }
+            }
+        }
+        break;
+    case 2:
+
+        printf("A MAQUINA ACERTOU UMA EMBARCACAO!!!\n");
+
+        mat[linecol[0]][linecol[1]] = -1;
+
+
+
+        getch();
+
+        if(((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]][linecol[1]-1] == -1) && (mat[linecol[0]][linecol[1]-2] == -1)) || ((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]][linecol[1]+1] == -1) && (mat[linecol[0]][linecol[1]+2] == -1)))
+        {
+            printf("A MAQUINA DETRUIU UM NAVIO TANQUE!!");
+            (*nT)--;
+            getch();
+        }
+        else
+        {
+            if(((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]-1][linecol[1]] == -1) && (mat[linecol[0]-2][linecol[1]] == -1)) || ((mat[linecol[0]][linecol[1]] == -1) && (mat[linecol[0]+1][linecol[1]] == -1) && (mat[linecol[0]+2][linecol[1]] == -1)))
+            {
+                printf("A MAQUINA DESTRIU UM NAVIO TANQUE!!");
+                (*nT)--;
+                getch();
+            }
+        }
+        break;
+    case 3:
+        printf("A MAQUINA ACERTOU UMA EMBARCACAO!!!\n");
+
+        mat[linecol[0]][linecol[1]] = -1;
+
+
+
+
+        getch();
+        if((mat[linecol[0]][linecol[1]] == -1 && mat[linecol[0]][linecol[1]-1] == -1) || (mat[linecol[0]][linecol[1]] == -1 && mat[linecol[0]][linecol[1]+1] == -1))
+        {
+            printf("A MAQUINA DETRUIU UM CONTRA-TORPEDEIRO!!");
+            (*cT)--;
+            getch();
+        }
+        else
+        {
+            if((mat[linecol[0]][linecol[1]] == -1 && mat[linecol[0]-1][linecol[1]] == -1) || (mat[linecol[0]][linecol[1]] == -1 && mat[linecol[0]+1][linecol[1]] == -1))
+            {
+                printf("A MAQUINA DESTRIU UM CONTRA-TORPEDEIRO!!");
+                (*cT)--;
+                getch();
+            }
+        }
+        break;
+    case 4:
+        printf("A MAQUINA ACERTOU UMA EMBARCACAO!!!\n");
+
+        mat[linecol[0]][linecol[1]] = -1;
+
+        printf("A MAQUINA DETRUIU UM SUBMARINO!!");
 
         (*sM)--;
         getch();
