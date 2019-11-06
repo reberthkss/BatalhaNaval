@@ -44,3 +44,24 @@
 	<stdio.h>
 	<stdlib.h>
 
+1571612862 source:c:\users\reberth\downloads\batalhanaval-master\fjogar.c
+	"fJogar.h"
+	"fPosicionar.h"
+	<stdio.h>
+	<stdlib.h>
+
+1571612862 c:\users\reberth\downloads\batalhanaval-master\fjogar.h
+
+1571612862 c:\users\reberth\downloads\batalhanaval-master\fposicionar.h
+
+1571612862 source:c:\users\reberth\downloads\batalhanaval-master\fposicionar.c
+	"fPosicionar.h"
+	<stdio.h>
+	<stdlib.h>
+
+1571612862 source:c:\users\reberth\downloads\batalhanaval-master\main.c
+	<stdio.h>
+	<stdlib.h>
+	"fPosicionar.h"
+	"fJogar.h"
+

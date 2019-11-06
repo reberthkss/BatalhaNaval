@@ -108,12 +108,12 @@ void posicionar(int tab[10][10],int opt)
         printf("%s, de 0 - 3 digite a opcao da peca a ser posicionada: ",toString(opt));
         scanf("%i",&peca);
 
-       /* while(peca != 0 && peca != 1 && peca != 2 && peca != 3)
+       while(peca != 0 && peca != 1 && peca != 2 && peca != 3)
         {
             printf("Digite uma opcao valida: ");
             scanf("%i",&peca);
         }
-*/
+
         switch(peca)
         {
         case 0:
@@ -157,12 +157,12 @@ void posicionar(int tab[10][10],int opt)
             if(direcao == 0)
             {
                 contVet = 4;
-                i = 0;
+
             }
             else
             {
                 contHor = 4;
-                i = 0;
+
             }
 
             if(contVet + linha > 10 || contHor + coluna > 10)
@@ -189,7 +189,7 @@ void posicionar(int tab[10][10],int opt)
             {
                 printf("NAO EH POSSIVEL POSICIONAR O PORTA-AVIAO POIS ELE\n");
                 printf("ULTRAPASSA O LIMITE DO TABULEIRO OU SOBREPOE UMA PECA\n");
-                printf("VOLTANDO... DIGITE QUALQUER TECLA");
+                printf("VOLTANDO... DIGITE QUALQUER TECLA\n");
                 ver = 0;
 
                 getch();
@@ -225,7 +225,7 @@ void posicionar(int tab[10][10],int opt)
             if(jog1.nT == 0)
             {
                 printf("VOCE NAO TEM NENHUM NAVIO-TANQUE EM SEU ARSENAL!! VOLTANDO.... \n");
-                menu2 = scanf("%i",&lixo);
+                getch();
                 break;
             }
             printf("DIGITE A LINHA QUE VOCE DESEJA POSICIONAR O NAVIO-TANQUE: ");
@@ -291,7 +291,7 @@ void posicionar(int tab[10][10],int opt)
             {
                 printf("NAO EH POSSIVEL POSICIONAR O NAVIO-TANQUE POIS ELE\n");
                 printf("ULTRAPASSA O LIMITE DO TABULEIRO OU SOBREPOE UMA PECA\n");
-                printf("VOLTANDO... DIGITE QUALQUER TECLA");
+                printf("VOLTANDO... DIGITE QUALQUER TECLA\n");
                 ver = 0;
                 getch();
             }
@@ -325,7 +325,7 @@ void posicionar(int tab[10][10],int opt)
             if(jog1.cT == 0)
             {
                 printf("VOCE NAO TEM NENHUM CONTRA-TORPEDEIRO EM SEU ARSENAL!! VOLTANDO.... \n");
-                menu2 = scanf("%i",&lixo);
+                getch();
                 break;
             }
             printf("DIGITE A LINHA QUE VOCE DESEJA POSICIONAR O CONTRA-TORPEDEIRO: ");
@@ -394,7 +394,7 @@ void posicionar(int tab[10][10],int opt)
             {
                 printf("NAO EH POSSIVEL POSICIONAR O CONTRA-TORPEDEIRO POIS ELE\n");
                 printf("ULTRAPASSA O LIMITE DO TABULEIRO OU SOBREPOE UMA PECA\n");
-                printf("VOLTANDO... DIGITE QUALQUER TECLA");
+                printf("VOLTANDO... DIGITE QUALQUER TECLA\n");
 
                 ver = 0;
                 getch();
@@ -429,7 +429,7 @@ void posicionar(int tab[10][10],int opt)
             if(jog1.sM == 0)
             {
                 printf("VOCE NAO TEM NENHUM SUBMARINO EM SEU ARSENAL!! VOLTANDO.... \n");
-                menu2 = scanf("%i",&lixo);
+                getch();
                 break;
             }
             printf("DIGITE A LINHA QUE VOCE DESEJA POSICIONAR O SUBMARINO: ");
@@ -495,7 +495,7 @@ void posicionar(int tab[10][10],int opt)
             {
                 printf("NAO EH POSSIVEL POSICIONAR O SUBMARINO POIS ELE\n");
                 printf("ULTRAPASSA O LIMITE DO TABULEIRO OU SOBREPOE UMA PECA\n");
-                printf("VOLTANDO... DIGITE QUALQUER TECLA");
+                printf("VOLTANDO... DIGITE QUALQUER TECLA\n");
 
                 ver = 0;
                 getch();
@@ -569,312 +569,6 @@ void posicionar(int tab[10][10],int opt)
     }
 }
 
-
-void posicionarR(int tab[10][10])
-{
-    // porta avioes - navios tanque - contra torpedeiros - submarinos
-    int pA[4],nT[3],cT[2],sM[1];
-
-    printf("entrou");
-    getch();
-
-
-    struct arsenal jog1;
-    setArs(&jog1.pA,&jog1.nT,&jog1.cT,&jog1.sM);
-
-    int jogada;
-    int peca;
-    int i;
-    int menu2;
-    int ver = 0;
-    int lixo;
-//printf("\ncriou");
-   // getch();
-
-    while(jog1.pA > 0  || jog1.nT > 0 || jog1.cT > 0 || jog1.sM > 0)
-    {
-        //printf("entrou while");
-        getch();
-        int direcao,contVet = 0,contHor = 0;
-        int linha = 0;
-        int coluna = 0;
-    for(int i = 0; i< 4 ; i++){
-        peca = rand() % 4;
-    }
-        //printf("escolheu peca");
-        //getch();
-
-        //printf("peca: %i",peca);
-        //getch();
-
-        switch(peca)
-        {
-        case 0:
-            //printf("peca: %i",peca);
-            if(jog1.pA == 0)
-            {
-                break;
-            }
-            linha = rand() % 10;
-            coluna = rand() % 10;
-            direcao = rand() % 2;
-            if(direcao == 0)
-            {
-                contVet = 4;
-                i = 0;
-            }
-            else
-            {
-                contHor = 4;
-                i = 0;
-            }
-
-            if(contVet + linha > 10 || contHor + coluna > 10)
-            {
-                ver = 1;
-            }
-
-            for(i = 0 ; i < contVet ; i++)
-            {
-                if(tab[linha+i][coluna] != 0)
-                {
-                    ver = 1;
-                }
-            }
-            for(i = 0 ; i < contHor ; i++)
-            {
-                if(tab[linha][coluna+i] != 0)
-                {
-                    ver = 1;
-                }
-            }
-
-            if(ver)
-            {}
-            else
-            {
-                i = 0;
-                if(contVet > 0)
-                {
-                    while(contVet != 0)
-                    {
-                        tab[linha+i][coluna] = 1;
-                        contVet--;
-                        i++;
-                    }
-                }
-                else
-                {
-                    while(contHor != 0)
-                    {
-                        tab[linha][coluna+i] = 1;
-                        contHor--;
-                        i++;
-                    }
-                }
-                jog1.pA--;
-            }
-            break;
-        case 1:
-            //printf("peca: %i",peca);
-            if(jog1.nT == 0)
-            {
-                break;
-            }
-            linha = rand() % 10;
-
-            coluna = rand() % 10;
-
-            direcao = rand() % 2;
-            if(direcao == 0)
-            {
-                contVet = 3;
-                i = 0;
-            }
-            else
-            {
-                contHor = 3;
-                i = 0;
-            }
-
-            if(contVet + linha > 10 || contHor + coluna > 10)
-            {
-                ver = 1;
-            }
-
-            for(i = 0 ; i < contVet ; i++)
-            {
-                if(tab[linha+i][coluna] != 0)
-                {
-                    ver = 1;
-                }
-            }
-            for(i = 0 ; i < contHor ; i++)
-            {
-                if(tab[linha][coluna+i] != 0)
-                {
-                    ver = 1;
-                }
-            }
-
-            if(ver)
-            {}
-            else
-            {
-                i = 0;
-                if(contVet > 0)
-                {
-                    while(contVet != 0)
-                    {
-                        tab[linha+i][coluna] = 2;
-                        contVet--;
-                        i++;
-                    }
-                }
-                else
-                {
-                    while(contHor != 0)
-                    {
-                        tab[linha][coluna+i] = 2;
-                        contHor--;
-                        i++;
-                    }
-                }
-                jog1.nT--;
-            }
-            break;
-        case 2:
-           // printf("peca: %i",peca);
-            if(jog1.cT == 0)
-            {
-                break;
-            }
-            linha = rand() % 10;
-            coluna = rand() % 10;
-            direcao = rand() % 2;
-
-
-            if(direcao == 0)
-            {
-                contVet = 2;
-                i = 0;
-            }
-            else
-            {
-                contHor = 2;
-                i = 0;
-            }
-
-            if(contVet + linha > 10 || contHor + coluna > 10)
-            {
-                ver = 1;
-            }
-
-            for(i = 0 ; i < contVet ; i++)
-            {
-                if(tab[linha+i][coluna] != 0)
-                {
-                    ver = 1;
-                }
-            }
-            for(i = 0 ; i < contHor ; i++)
-            {
-                if(tab[linha][coluna+i] != 0)
-                {
-                    ver = 1;
-                }
-            }
-
-            if(ver)
-            {}
-            else
-            {
-                i = 0;
-                if(contVet > 0)
-                {
-                    while(contVet != 0)
-                    {
-                        tab[linha+i][coluna] = 3;
-                        contVet--;
-                        i++;
-                    }
-                }
-                else
-                {
-                    while(contHor != 0)
-                    {
-                        tab[linha][coluna+i] = 3;
-                        contHor--;
-                        i++;
-                    }
-                }
-                jog1.cT--;
-            }
-            break;
-        case 3:
-//printf("peca: %i",peca);
-            if(jog1.sM == 0)
-            {
-                break;
-            }
-            linha = rand() % 10;
-            coluna = rand() % 10;
-            direcao = rand()%2;
-            if(direcao == 0)
-            {
-                contVet = 1;
-                i = 0;
-            }
-            else
-            {
-                contHor = 1;
-                i = 0;
-            }
-
-
-            for(i = 0 ; i < contVet ; i++)
-            {
-                if(tab[linha+i][coluna] != 0)
-                {
-                    ver = 1;
-                }
-            }
-            for(i = 0 ; i < contHor ; i++)
-            {
-                if(tab[linha][coluna+i] != 0)
-                {
-                    ver = 1;
-                }
-            }
-            if(ver != 0) {}
-            else
-            {
-                i = 0;
-                if(contVet > 0)
-                {
-                    while(contVet != 0)
-                    {
-                        tab[linha+i][coluna] = 4;
-                        contVet--;
-                        i++;
-                    }
-                }
-
-                else
-                {
-                    while(contHor != 0)
-                    {
-                        tab[linha][coluna+i] = 4;
-                        contHor--;
-                        i++;
-                    }
-                }
-                jog1.sM--;
-            }
-            break;
-        }
-    }
-}
 
 
 void limparVet(int mat[10][10])

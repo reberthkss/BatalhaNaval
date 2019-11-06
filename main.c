@@ -37,8 +37,7 @@ int main()
         printf("\t\t*********************************************\n");
         printf("\t\t*                                           *\n");
         printf("\t\t*          [1] INICIAR JOGO CONTRA JOGADOR  *\n");
-        printf("\t\t*[PROGRESS][2] INICIAR JOGO CONTRA MAQUINA  *\n");
-        printf("\t\t*          [3] SAIR                         *\n");
+        printf("\t\t*          [2] SAIR                         *\n");
         printf("\t\t*                                           *\n");
         printf("\t\t*********************************************\n");
         printf("\t\tDigite sua escolha: ");
@@ -98,54 +97,6 @@ int main()
             }
             break;
         case 2:
-            posicionar(tA,0);
-            posicionarR(tB);
-
-            printf("o jogo vai comecar...");
-            getch();
-            while(gameover2)
-            {
-                cont = 0;
-                while(cont < 2)
-                {
-                    //mostrar(int* mat[10][10],int opt,int* pA,int* nT,int* cT,int* sM);
-
-                    mostrar(tA,0,&contpA1,&contnT1,&contcT1,&contsM1);
-
-                    mostrar(tB,1,&contpA2,&contnT2,&contcT2,&contsM2);
-
-                    switch(cont)
-                    {
-                /*jogador 1*/   case 0:
-                        /*linhaEcoluna, jogador01*/
-
-                        jogada(lEc,0);
-
-                        game(lEc,tB,&contpA2,&contpA3,&contnT2,&contnT3,&contcT2,&contcT3,&contsM2,&contsM3);
-                        if(contpA2 == 0 && contnT2 == 0 && contcT2 == 0 && contsM2 == 0)
-                        {
-                            gameover2 = 0;
-                            winner = 0;
-                            cont = 2;
-                        }
-                        break;
-                /*jogador 2*/   case 1:
-                        jogadaR(lEc);
-                        // game(lEc,tA,&contpA2,&contnT2,&contcT2,&contsM2);
-                        gameR(lEc,tA,&contpA1,&contpA4,&contnT1,&contnT4,&contcT1,&contcT4,&contsM1,&contsM4);
-
-                        if(contpA1 == 0 && contnT1 == 0 && contcT1 == 0 && contsM1 == 0)
-                        {
-                            gameover2 = 0;
-                            winner = 1;
-                        }
-                        break;
-                    }
-                    cont++;
-                }
-            }
-            break;
-        case 3:
             gameover = 0;
             return gameover;
             break;
